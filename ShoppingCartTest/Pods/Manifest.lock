@@ -1,0 +1,21 @@
+PODS:
+  - DequeuableRegistrable (0.1.5)
+
+DEPENDENCIES:
+  - DequeuableRegistrable (from `https://github.com/fmo91/DequeuableRegistrable/`)
+
+EXTERNAL SOURCES:
+  DequeuableRegistrable:
+    :git: https://github.com/fmo91/DequeuableRegistrable/
+
+CHECKOUT OPTIONS:
+  DequeuableRegistrable:
+    :commit: e518e802dd99a146077cb65d82d51c29098e5b5b
+    :git: https://github.com/fmo91/DequeuableRegistrable/
+
+SPEC CHECKSUMS:
+  DequeuableRegistrable: fba8a5d083a5a87398a7c7aa35813ff7237f1fda
+
+PODFILE CHECKSUM: cca4495b0f9823f8500cedc42194a79c19f45ec7
+
+COCOAPODS: 1.0.1
