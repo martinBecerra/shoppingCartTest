@@ -11,6 +11,8 @@ target 'ShoppingCartTest' do
     # https://fmo91.github.io/DequeuableRegistrable/
      pod 'DequeuableRegistrable', :git => 'https://github.com/fmo91/DequeuableRegistrable/'
 
+    pod 'Kingfisher', '~> 3.0'
+    
   target 'ShoppingCartTestTests' do
     inherit! :search_paths
     # Pods for testing

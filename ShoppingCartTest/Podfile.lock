@@ -1,8 +1,10 @@
 PODS:
   - DequeuableRegistrable (0.1.5)
+  - Kingfisher (3.3.3)
 
 DEPENDENCIES:
   - DequeuableRegistrable (from `https://github.com/fmo91/DequeuableRegistrable/`)
+  - Kingfisher (~> 3.0)
 
 EXTERNAL SOURCES:
   DequeuableRegistrable:
@@ -15,7 +17,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   DequeuableRegistrable: fba8a5d083a5a87398a7c7aa35813ff7237f1fda
+  Kingfisher: 893215a42e5c2164e916f69463c68003092b104c
 
-PODFILE CHECKSUM: cca4495b0f9823f8500cedc42194a79c19f45ec7
+PODFILE CHECKSUM: 50b2f80562b2025fa37878a3ff834b3401a21f2f
 
 COCOAPODS: 1.0.1

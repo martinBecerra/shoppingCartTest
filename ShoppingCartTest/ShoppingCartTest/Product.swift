@@ -14,13 +14,15 @@ class Product {
     var name:String
     var stock:Int
     var price:Double
+    var imageUrl:String
     
-    init (id:Int,name:String,stock:Int,price:Double) {
+    init (id:Int,name:String,stock:Int,price:Double,imageUrl:String) {
         
         self.id = id
         self.name = name
         self.stock = stock
         self.price = price
+        self.imageUrl = imageUrl
     }
     
 }

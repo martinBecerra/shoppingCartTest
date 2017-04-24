@@ -16,7 +16,7 @@ final class ShoppingItem {
     init (product:Product) {
         
         self.product = product
-        self.numberOfItemSelected = 0
+        self.numberOfItemSelected = 1
         
     }
 }

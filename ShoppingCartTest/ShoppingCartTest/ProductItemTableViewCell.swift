@@ -14,9 +14,12 @@ struct ProductItemEntity {
     var name:String = ""
     var NumberOfItems:Int = 0
     var price:Double = 0.0
+    var imageURL:String
 }
 
-class ProductItemTableViewCellDelegate {
+protocol ProductItemTableViewCellDelegate : class {
+    
+    func actionButton(cell:ProductItemTableViewCell)
     
 }
 class ProductItemTableViewCell: UITableViewCell,Dequeuable,Registrable {
@@ -24,16 +27,24 @@ class ProductItemTableViewCell: UITableViewCell,Dequeuable,Registrable {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var productImage: UIImageView!
     
+    weak var delegate:ProductItemTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func configureDelegate(delegate:ProductItemTableViewCellDelegate) {
+        
+        self.delegate = delegate
+        
+    }
     func configureToBuy(product:ProductItemEntity) {
         
-        self.cellTextsSetup(name: product.name, subtitleText: "Stock: \(product.NumberOfItems)", ButtonText: "BUY \(product.price)")
+        self.productImage.setImageFromURL(product.imageURL)
+        self.cellTextsSetup(name: product.name, subtitleText: "Stock: \(product.NumberOfItems)", ButtonText: " BUY \(product.price) ")
         
     }
     
@@ -46,6 +57,12 @@ class ProductItemTableViewCell: UITableViewCell,Dequeuable,Registrable {
     
     func configureToRemove(product:ProductItemEntity) {
         
+        
+    }
+    
+    @IBAction func actionButtonPressed(_ sender: Any) {
+        
+        self.delegate?.actionButton(cell: self)
         
     }
 }

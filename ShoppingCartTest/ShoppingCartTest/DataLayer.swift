@@ -12,7 +12,7 @@ class DataLayer {
     
     func getProducts() -> [Product] {
         
-        let imagesUrls = ["https://images-na.ssl-images-amazon.com/images/I/717ytbvKqyL._SL1001_.jpg",
+        let imageUrls = ["https://images-na.ssl-images-amazon.com/images/I/717ytbvKqyL._SL1001_.jpg",
                           "https://images-na.ssl-images-amazon.com/images/I/71T63QicO8L._SL1500_.jpg",
                           "https://images-na.ssl-images-amazon.com/images/I/91TPmmUT5UL._SL1500_.jpg",
                           "https://images-na.ssl-images-amazon.com/images/I/715OSX-qukL._SL1500_.jpg"
@@ -36,8 +36,8 @@ class DataLayer {
         var productList = [Product]()
         
         
-        for (index, image) in imagesUrls.enumerated() {
-            productList.append(Product(id: index, name: artNames[index], stock: stocks[index], price: prices[index]))
+        for (index, imageUrl) in imageUrls.enumerated() {
+            productList.append(Product(id: index, name: artNames[index], stock: stocks[index], price: prices[index],imageUrl:imageUrl))
         }
         
         return productList

@@ -20,6 +20,8 @@
 		840238631EAE741100E9DC91 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840238621EAE741100E9DC91 /* ShoppingCart.swift */; };
 		840238651EAE742C00E9DC91 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840238641EAE742C00E9DC91 /* ShoppingItem.swift */; };
 		840238671EAE75CF00E9DC91 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840238661EAE75CF00E9DC91 /* DataLayer.swift */; };
+		845BA4A41EAE83FC007DEF77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BA4A31EAE83FC007DEF77 /* BaseViewController.swift */; };
+		845BA4A91EAE8D83007DEF77 /* UIImageView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BA4A81EAE8D83007DEF77 /* UIImageView+Convenience.swift */; };
 		9135AD10D3D5D0918A45EDCE /* Pods_ShoppingCartTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A82D2B096645F9E0F52E /* Pods_ShoppingCartTest.framework */; };
 		9B2AB5E26E13EE6EEFF7181F /* Pods_ShoppingCartTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E42D66F0BD0C90D990B9EB /* Pods_ShoppingCartTestTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		840238621EAE741100E9DC91 /* ShoppingCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		840238641EAE742C00E9DC91 /* ShoppingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		840238661EAE75CF00E9DC91 /* DataLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
+		845BA4A31EAE83FC007DEF77 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		845BA4A81EAE8D83007DEF77 /* UIImageView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Convenience.swift"; sourceTree = "<group>"; };
 		944258D554D9F6F39948202E /* Pods-ShoppingCartTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCartTest/Pods-ShoppingCartTest.release.xcconfig"; sourceTree = "<group>"; };
 		9F12A82D2B096645F9E0F52E /* Pods_ShoppingCartTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCartTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +118,7 @@
 		840238311EAE6A1B00E9DC91 /* ShoppingCartTest */ = {
 			isa = PBXGroup;
 			children = (
+				845BA4A51EAE8453007DEF77 /* Extensions */,
 				8402385F1EAE737900E9DC91 /* DataLayer */,
 				8402385E1EAE737300E9DC91 /* Model */,
 				8402385A1EAE727200E9DC91 /* App */,
@@ -147,8 +152,8 @@
 		840238591EAE726600E9DC91 /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				845BA4A21EAE83CD007DEF77 /* Controllers */,
 				8402385B1EAE728600E9DC91 /* Presenters */,
-				840238571EAE709400E9DC91 /* ProductListController.swift */,
 				840238521EAE6C8100E9DC91 /* Components */,
 			);
 			name = ProductList;
@@ -186,6 +191,23 @@
 				840238661EAE75CF00E9DC91 /* DataLayer.swift */,
 			);
 			name = DataLayer;
+			sourceTree = "<group>";
+		};
+		845BA4A21EAE83CD007DEF77 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				845BA4A31EAE83FC007DEF77 /* BaseViewController.swift */,
+				840238571EAE709400E9DC91 /* ProductListController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		845BA4A51EAE8453007DEF77 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				845BA4A81EAE8D83007DEF77 /* UIImageView+Convenience.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		9E26681FEBFA8A39E073D0B4 /* Frameworks */ = {
@@ -407,6 +429,8 @@
 				840238581EAE709400E9DC91 /* ProductListController.swift in Sources */,
 				8402385D1EAE72AA00E9DC91 /* ProductListPresenterImp.swift in Sources */,
 				840238611EAE73C100E9DC91 /* Product.swift in Sources */,
+				845BA4A41EAE83FC007DEF77 /* BaseViewController.swift in Sources */,
+				845BA4A91EAE8D83007DEF77 /* UIImageView+Convenience.swift in Sources */,
 				840238651EAE742C00E9DC91 /* ShoppingItem.swift in Sources */,
 				840238331EAE6A1B00E9DC91 /* AppDelegate.swift in Sources */,
 				840238541EAE6CE100E9DC91 /* ProductItemTableViewCell.swift in Sources */,

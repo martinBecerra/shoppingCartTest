@@ -12,16 +12,24 @@ protocol ProductListPresenter: class{
     
     func numberOfProducts() -> Int
     func getProductEntity(pos:Int) -> ProductItemEntity
+    func addToCartItem(pos:Int)
+   
 }
 
-class ProductListController: UIViewController {
+class ProductListController: BaseViewController {
 
     @IBOutlet weak var productListTableView: UITableView!
+    @IBOutlet weak var costLabel: UILabel!
+    
+    @IBOutlet weak var numberOfItemContainer: UIView!
+    @IBOutlet weak var numberOfItemLabel: UILabel!
     
     var presenter:ProductListPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Products"
 
         self.presenterSetup()
         self.productListSetup()
@@ -30,12 +38,13 @@ class ProductListController: UIViewController {
     }
     
     private func presenterSetup() {
-       self.presenter = ProductListPresenterImp()
+        self.presenter = ProductListPresenterImp(delegate:self)
        
     }
     private func productListSetup(){
         self.productListTableView.delegate = self
         self.productListTableView.dataSource = self
+        self.productListTableView.tableFooterView = UIView()
         
        ProductItemTableViewCell.register(in: productListTableView)
     }
@@ -59,6 +68,7 @@ extension ProductListController: UITableViewDataSource {
         
         cell.configureToBuy(product: self.presenter.getProductEntity(pos: indexPath.row))
         
+        cell.configureDelegate(delegate: self)
         return cell
     }
 }
@@ -67,5 +77,36 @@ extension ProductListController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+}
+
+extension ProductListController : ProductItemTableViewCellDelegate {
+    
+    func actionButton(cell:ProductItemTableViewCell) {
+        
+        if let index = self.productListTableView.indexPath(for: cell) {
+                self.presenter.addToCartItem(pos: index.row)
+        }
+        
+    }
+}
+
+extension ProductListController : ProductListPresenterDelegate {
+    
+    func updateTotalCost(totalCost:Double) {
+        self.costLabel.text = "Cost U$S \(totalCost)"
+    }
+    
+    func updateNumberOfItemsOfCart(numberOfItems:Int) {
+        
+        if numberOfItems == 0 {
+            self.numberOfItemContainer.isHidden = true
+        }
+        else {
+            self.numberOfItemContainer.isHidden = false
+            self.numberOfItemLabel.text = "\(numberOfItems)"
+        }
+        
+        self.productListTableView.reloadData()
     }
 }
